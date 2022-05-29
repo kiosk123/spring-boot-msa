@@ -1,1 +1,1 @@
-# 2-1. Service Discovery 소개  
+2-1. Spring Cloud Netflix Eureka   
