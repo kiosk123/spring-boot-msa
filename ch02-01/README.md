@@ -22,4 +22,18 @@ public class EcommerceApplication {
 ```
 
 ## application.yml 설정
+```yml
+server:
+    port: 8761
+spring:
+    application:
+        name: discoveryserivce # 마이크로 서비스의 이름을 설정한다 - 여기서는 유레카 서비스의 이름
 
+eureka:
+    client:
+        register-with-eureka: false # 자기자신의 정보를 서비스 디스커버리에 등록하지 않도록 설정
+        fetch-registry: false       # 자기자신의 정보를 서비스 디스커버리에 등록하지 않도록 설정
+```
+
+## 유레카 대시보드 확인
+<유레가 서버 아이피>:<포트>로 접속하여 대시보드가 표시되는지 확인한다.
