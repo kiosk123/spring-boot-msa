@@ -2,5 +2,6 @@
 # 순서
 1. Microservice와 Spring Cloud의 소개  
 2. Service Discovery 소개  
-2-1. Spring Cloud Netflix Eureka    
+2-1. Spring Cloud Netflix Eureka   
+2-2. User Service - 프로젝트 생성   
 
