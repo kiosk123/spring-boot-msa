@@ -12,10 +12,10 @@
 ```java
 @SpringBootApplication
 @EnableEurekaServer
-public class DiscoveryServiceApplication {
+public class DiscoveryserviceApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(DiscoveryServiceApplication.class, args);
+        SpringApplication.run(DiscoveryserviceApplication.class, args);
     }
 
 }
