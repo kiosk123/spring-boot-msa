@@ -48,7 +48,7 @@ eureka:
 public class UserServiceApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(UserServiceApplication.class, args);
+        SpringApplication.run(UserServiceApplication.class, args);
 	}
 
 }
@@ -70,3 +70,6 @@ eureka:
     service-url: 
       defaultZone: http://localhost:8761/eureka # 유레카 클라이언트가 서비스를 등록할 서버 주소 
 ```
+
+애플리케이션 실행 후 유레카 대시보드에서 애플리케이션이 잘 등록되었는지 확인한다.
+![.](./img/4.png)  
