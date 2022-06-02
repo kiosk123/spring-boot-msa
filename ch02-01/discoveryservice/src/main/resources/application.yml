@@ -3,6 +3,7 @@ server:
 spring:
     application:
         name: discoveryserivce 
+
 eureka:
     client:
         register-with-eureka: false

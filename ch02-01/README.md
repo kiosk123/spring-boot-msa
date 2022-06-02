@@ -8,7 +8,7 @@
 ## SpringBoot 의존성 설정
 ![.](./img/1.png)  
 
-## 스프링 부트가 유레카 서버로서 작동하기 위해서는 `@EnableEurekaServer`를 설정해줘야한다.
+스프링 부트가 유레카 서버로서 작동하기 위해서는 `@EnableEurekaServer`를 설정해줘야한다.
 ```java
 @SpringBootApplication
 @EnableEurekaServer
@@ -21,7 +21,7 @@ public class DiscoveryserviceApplication {
 }
 ```
 
-## application.yml 설정
+`application.yml` 설정은 다음과 같다
 ```yml
 server:
     port: 8761
@@ -35,6 +35,38 @@ eureka:
         fetch-registry: false       # 자기자신의 정보를 서비스 디스커버리에 등록하지 않도록 설정
 ```
 
-## 유레카 대시보드 확인
-<유레가 서버 아이피>:<포트>로 접속하여 대시보드가 표시되는지 확인한다.
+<유레가 서버 아이피>:<포트>로 접속하여 유레카 대시보드가 표시되는지 확인한다.
 ![.](./img/2.png)  
+
+## 유레카 클라이언트 역할의 UserService 프로젝트 생성
+![.](./img/3.png)  
+
+`@EnableDiscoveryClient`를 활성화 시킨다.
+```java
+@SpringBootApplication
+@EnableDiscoveryClient
+public class UserServiceApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(UserServiceApplication.class, args);
+	}
+
+}
+```
+
+`application.yml` 파일을 다음과 같이 설정한다.
+```yml
+server:
+  port: 9001
+
+spring:
+  application:
+    name: user-service # 마이크로 서비스의 이름을 설정한다
+
+eureka:
+  client:
+    register-with-eureka: true # 서비스 디스커버리에 서비스 등록 설정
+    fetch-registry: true # Eureka 서버로부터 인스턴스들의 정보를 주기적으로 가져올 것인지 설정하는 속성
+    service-url: 
+      defaultZone: http://localhost:8761/eureka # 유레카 클라이언트가 서비스를 등록할 서버 주소 
+```
